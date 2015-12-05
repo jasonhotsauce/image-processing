@@ -1,0 +1,35 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TextField?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="sample.Controller">
+    <center>
+        <ImageView fx:id="currentFrame" fitWidth="400" fitHeight="400" pickOnBounds="true" preserveRatio="true"/>
+    </center>
+    <right>
+        <VBox alignment="CENTER_LEFT" spacing="10">
+            <padding>
+                <Insets left="10" right="20"/>
+            </padding>
+            <ImageView fx:id="histogram" />
+            <Text text="Controls" />
+            <TextField fx:id="contrastInput"/>
+            <TextField fx:id="brightnessInput"/>
+            <CheckBox fx:id="grayscale" text="Change Contrast and Brightness" />
+            <CheckBox fx:id="logoCheckBox" text="Show logo" onAction="#loadLogo" />
+        </VBox>
+    </right>
+    <bottom>
+        <HBox alignment="CENTER" >
+            <padding>
+                <Insets top="25" right="25" bottom="25" left="25"/>
+            </padding>
+            <Button fx:id="button" alignment="center" text="Start camera" onAction="#startCamera" />
+        </HBox>
+    </bottom>
+</BorderPane>
